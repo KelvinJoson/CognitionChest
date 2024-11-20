@@ -1,0 +1,139 @@
+site_name: Obsidian-Material-Mkdocs-Foam-Template
+#site_url: https://obsidian-material-mkdocs-foam-template.kelvinjoson.com/
+#repo_url: https://github.com/KelvinJoson/obsidian-material-mkdocs-foam-template
+#repo_name: KelvinJoson/obsidian-material-mkdocs-foam-template
+site_author: Kelvin Joson
+site_description: Kelvin Joson's Obsidian Material Mkdocs Foam Template
+copyright: >
+  Copyright &copy; 2024-2025 Kelvin Joson
+#  </br>
+#  <a href="#__consent">Change cookie settings</a>
+theme:
+  #logo: assets/custom_logo.png
+  #favicon: assets/custom_favicon.png
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  name: material
+  custom_dir: overrides
+  icon:
+    logo: fontawesome/solid/user-astronaut
+    repo: fontawesome/brands/github
+    edit: material/file-edit-outline
+  features:
+    - announce.dismiss
+    - navigation.tabs
+    #- navigation.tabs.sticky
+    - header.autohide
+    - content.tabs.link
+    - content.tooltips
+    - content.code.annotate
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.prune
+    - navigation.expand
+    - search.share
+    - search.suggest
+    - navigation.indexes
+    - navigation.sections
+    - toc.follow
+    #- toc.integrate
+    - navigation.footer
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-5
+        name: Switch to Dark Mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Light Mode
+extra:
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:kelvin@kelvinjoson.com
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/kelvinjoson/
+    - icon: fontawesome/brands/github
+      link: https://github.com/KelvinJoson
+    - icon: fontawesome/solid/earth-asia
+      link: https://kelvinjoson.com
+  #homepage: http://localhost:8082
+  #analytics:
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - footnotes
+  - def_list
+  - tables
+  - abbr
+  - md_in_html
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - toc:
+      permalink: ⚑
+plugins:
+  - privacy:
+      enabled: !ENV [CI, false]
+      assets: false
+      assets_fetch: true
+  - offline
+  - tags:
+      tags: true
+  - search
+  - callouts # requires installation of "markdown-callouts"
+  - roamlinks # requires installation of "mkdocs-roamlinks-plugin"
+  - social:
+      enabled: !ENV [CI, false]
+      cards_layout_options:
+        font_family: IBM Plex Sans
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: timeago
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+extra_css:
+  - stylesheets/extra.css
+#nav:
+#  - Home: index.md
